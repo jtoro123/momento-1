@@ -1,0 +1,45 @@
+# Paso 1: Crear un diccionario vacío
+mi_diccionario = {}
+
+# Definir el bucle principal del programa
+while True:
+    print("\nMenu:")
+    print("1. Agregar")
+    print("2. Buscar")
+    print("3. Actualizar dato")
+    print("4. Eliminar elemento")
+    print("5. Salir")
+
+    opcion = input("Digite la opción: ")
+
+    if opcion == "1":
+        clave = input("Ingrese la clave: ")
+        valor = input("Ingrese el valor: ")
+        mi_diccionario[clave] = valor
+        print(f"Elemento '{clave}' agregado correctamente.")
+    elif opcion == "2":
+        clave = input("Ingrese la clave que desea buscar: ")
+        if clave in mi_diccionario:
+            print(f"Valor encontrado: {mi_diccionario[clave]}")
+        else:
+            print(f"La clave '{clave}' no existe en el diccionario.")
+    elif opcion == "3":
+        clave = input("Ingrese la clave que desea actualizar: ")
+        if clave in mi_diccionario:
+            valor = input("Ingrese el nuevo valor: ")
+            mi_diccionario[clave] = valor
+            print(f"Elemento '{clave}' actualizado correctamente.")
+        else:
+            print(f"La clave '{clave}' no existe en el diccionario.")
+    elif opcion == "4":
+        clave = input("Ingrese la clave que desea eliminar: ")
+        if clave in mi_diccionario:
+            del mi_diccionario[clave]
+            print(f"Elemento '{clave}' eliminado correctamente.")
+        else:
+            print(f"La clave '{clave}' no existe en el diccionario.")
+    elif opcion == "5":
+        print("Saliendo del programa.")
+        break
+    else:
+        print("Opción no válida. Por favor, elija una opción válida del menú.")
